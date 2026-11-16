@@ -34,6 +34,24 @@ class CalculadoraKT {
         }
     }
 
+    fun porcentaje(){
+        val numero = num2.toDoubleOrNull()
+
+        if(numero != null){
+            num2 = (numero / 100).toString()
+        }
+    }
+
+    fun cambioSigno(){
+        if(num2.isNotEmpty()){
+            if(num2.startsWith("-")){
+                num2 = num2.substring(1)
+            } else {
+                num2 = "-$num2"
+            }
+        }
+    }
+
 
     fun igual(){
         val num1 = this.num1.toDouble()

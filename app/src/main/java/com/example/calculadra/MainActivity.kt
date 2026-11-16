@@ -136,6 +136,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.del -> {
                 calc.borrarUltimo()
             }
+            R.id.porcentaje -> {
+                calc.porcentaje()
+            }
+            R.id.buts -> {
+                calc.cambioSigno()
+            }
         }
 
         if (calc.num2.isEmpty()) {
