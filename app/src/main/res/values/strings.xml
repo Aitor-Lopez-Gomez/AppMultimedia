@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Calculadra</string>
+
+    <string-array name="monedas">
+        <item>EUR - Euro</item>
+        <item>USD - Dólar</item>
+        <item>GBP - Libra esterlina</item>
+    </string-array>
 </resources>

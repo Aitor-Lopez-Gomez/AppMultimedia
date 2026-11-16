@@ -13,10 +13,13 @@
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:background="#3A226D"
+        android:paddingTop="8dp"
         android:text="Aplicacion Multimedia"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

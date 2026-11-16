@@ -20,8 +20,13 @@ class MenuActivity : AppCompatActivity() {
             insets
         }
         val btnCalculadora = findViewById<Button>(R.id.btnCalculadora)
+        val btnConvensor = findViewById<Button>(R.id.btnConversor)
         btnCalculadora.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+        btnConvensor.setOnClickListener {
+            val intent = Intent(this, ConversorActivity::class.java)
             startActivity(intent)
         }
 
