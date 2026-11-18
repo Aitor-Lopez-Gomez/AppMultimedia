@@ -21,12 +21,17 @@ class MenuActivity : AppCompatActivity() {
         }
         val btnCalculadora = findViewById<Button>(R.id.btnCalculadora)
         val btnConvensor = findViewById<Button>(R.id.btnConversor)
+        val btnJuego = findViewById<Button>(R.id.btnJuego)
         btnCalculadora.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
         btnConvensor.setOnClickListener {
             val intent = Intent(this, ConversorActivity::class.java)
+            startActivity(intent)
+        }
+        btnJuego.setOnClickListener {
+            val intent = Intent(this, MinijuegoActivity::class.java)
             startActivity(intent)
         }
 
