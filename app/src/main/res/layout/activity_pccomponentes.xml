@@ -10,12 +10,18 @@
 
     <TextView
         android:id="@+id/txtTituloComponentes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/fondo_cabecera"
+        android:gravity="start|center_vertical"
+        android:paddingStart="60dp"
         android:text="PCComponentes"
-        android:textColor="#493563"
-        android:textSize="28sp"
+        android:textAlignment="gravity"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,12 +31,13 @@
         android:id="@+id/txtSubtituloComponentes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
         android:text="Gestiona tu inventario informatico"
         android:textColor="#796A8C"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/rvComponentes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTituloComponentes" />
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvComponentes"
@@ -61,4 +68,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rvComponentes" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtTituloComponentes"
+        app:layout_constraintEnd_toEndOf="@+id/txtTituloComponentes"
+        app:layout_constraintTop_toTopOf="@+id/txtTituloComponentes"
+        app:srcCompat="@drawable/ic_procesador" />
+
+    <ImageButton
+        android:id="@+id/btnVolver"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Volver al menú"
+        app:layout_constraintBottom_toBottomOf="@+id/txtTituloComponentes"
+        app:layout_constraintStart_toStartOf="@+id/txtTituloComponentes"
+        app:layout_constraintTop_toTopOf="@+id/txtTituloComponentes"
+        app:srcCompat="@drawable/ic_flecha_volver" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Mis componentes"
+        android:textColor="#493563"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtSubtituloComponentes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloComponentes" />
 </androidx.constraintlayout.widget.ConstraintLayout>
