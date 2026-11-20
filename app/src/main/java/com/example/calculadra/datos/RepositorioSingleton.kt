@@ -1,5 +1,6 @@
 package com.example.calculadra.datos
 import com.example.calculadra.modelo.Componente
+import com.example.calculadra.R
 class RepositorioSingleton private constructor(){
     companion object {
         val instance = RepositorioSingleton()
@@ -12,34 +13,34 @@ class RepositorioSingleton private constructor(){
     private fun poblar() {
         listaComponentes.nuevoComponente(
             Componente("RTX 5070", "NVIDIA", "Tarjeta gráfica",
-                549.99, android.R.drawable.ic_menu_gallery,
+                549.99, R.drawable.rtx5070,
                 "12 GB GDDR7", 4.5f)
         )
 
         listaComponentes.nuevoComponente(
             Componente("Ryzen 7 7800X3D", "AMD", "Procesador",
-                349.99, android.R.drawable.ic_menu_gallery,
+                349.99, R.drawable.ryzen7800x3d,
                 "8 núcleos y 16 hilos", 5f)
         )
 
         listaComponentes.nuevoComponente(
             Componente("Vengeance 32 GB", "Corsair", "Memoria RAM",
-                99.99, android.R.drawable.ic_menu_gallery,
+                99.99, R.drawable.corsair32gb,
                 "32 GB DDR5", 4f)
         )
         listaComponentes.nuevoComponente(
             Componente("RTX 5070", "NVIDIA", "Tarjeta gráfica",
-                549.99, android.R.drawable.ic_menu_gallery,
+                549.99, R.drawable.rtx5070,
                 "12 GB GDDR7", 4.5f)
         )
         listaComponentes.nuevoComponente(
             Componente("RTX 5070", "NVIDIA", "Tarjeta gráfica",
-                549.99, android.R.drawable.ic_menu_gallery,
+                549.99, R.drawable.rtx5070,
                 "12 GB GDDR7", 4.5f)
         )
         listaComponentes.nuevoComponente(
             Componente("RTX 5070", "NVIDIA", "Tarjeta gráfica",
-                549.99, android.R.drawable.ic_menu_gallery,
+                549.99, R.drawable.rtx5070,
                 "12 GB GDDR7", 4.5f)
         )
     }
