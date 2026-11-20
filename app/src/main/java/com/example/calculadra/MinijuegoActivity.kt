@@ -16,7 +16,7 @@ class MinijuegoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_minijuego)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.imgIconoJuego)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -32,6 +32,7 @@ class MinijuegoActivity : AppCompatActivity() {
         val btnPapel = findViewById<ImageButton>(R.id.btnPapel)
         val btnTijera = findViewById<ImageButton>(R.id.btnTijera)
         val btnReiniciar = findViewById<Button>(R.id.btnReiniciar)
+        val btnVolver = findViewById<ImageButton>(R.id.btnVolver)
 
         fun jugar(eleccion: Int){
             val maquina = Random.nextInt(0,3)
@@ -83,7 +84,9 @@ class MinijuegoActivity : AppCompatActivity() {
         btnReiniciar.setOnClickListener {
             reiniciar()
         }
-
+        btnVolver.setOnClickListener {
+            finish()
+        }
 
     }
     var victorias = 0

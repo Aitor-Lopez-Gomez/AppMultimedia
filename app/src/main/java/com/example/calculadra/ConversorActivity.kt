@@ -9,13 +9,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
-
+import android.widget.ImageButton
 class ConversorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_conversor)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.imgIconoJuego)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -25,6 +25,7 @@ class ConversorActivity : AppCompatActivity() {
         val monedaDestino = findViewById<Spinner>(R.id.monedaDestino)
         val btnConvertir = findViewById<Button>(R.id.btnConvertir)
         val resultado = findViewById<TextView>(R.id.resultado)
+        val btnVolver = findViewById<ImageButton>(R.id.btnVolver)
 
         btnConvertir.setOnClickListener {
             if (cantidad.text.toString().isEmpty()) {
@@ -53,7 +54,11 @@ class ConversorActivity : AppCompatActivity() {
                 else -> euros
             }
 
-            resultado.text = String.format("%.2f", conversion)
+            resultado.text = String.format("%.2f €", conversion)
+        }
+
+        btnVolver.setOnClickListener {
+            finish()
         }
 
 
