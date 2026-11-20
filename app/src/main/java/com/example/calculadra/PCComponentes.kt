@@ -5,6 +5,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.calculadra.vista.AdaptadorComponentes
 
 class PCComponentes : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,5 +19,11 @@ class PCComponentes : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val recycler = findViewById<RecyclerView>(R.id.rvComponentes)
+
+        val adaptador = AdaptadorComponentes()
+
+        recycler.adapter = adaptador
+        recycler.layoutManager = LinearLayoutManager(this)
     }
 }
