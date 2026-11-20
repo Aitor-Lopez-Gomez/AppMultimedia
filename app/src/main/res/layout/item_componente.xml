@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/fondo_tarjeta"
+    android:elevation="2dp"
+    android:padding="12dp" >
+
+    <ImageView
+        android:id="@+id/imgComponente"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/txtNombreComponente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="NVIDIA RTX 5070"
+        android:textColor="#292331"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imgComponente"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCategoriaComponente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:text="Tarjeta gráfica"
+        android:textColor="#796A8C"
+        app:layout_constraintStart_toEndOf="@+id/imgComponente"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombreComponente" />
+
+    <TextView
+        android:id="@+id/txtPrecioComponente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:text="	549,99 €"
+        android:textColor="#7150A1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imgComponente"
+        app:layout_constraintTop_toBottomOf="@+id/txtCategoriaComponente" />
+
+    <ImageView
+        android:id="@+id/imgDetalles"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_detalles" />
+</androidx.constraintlayout.widget.ConstraintLayout>
