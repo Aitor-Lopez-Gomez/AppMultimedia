@@ -45,7 +45,11 @@ class AdaptadorComponentes : RecyclerView.Adapter<AdaptadorComponentes.CreadorIt
         }
         holder.valoracion.rating = componente.valoracion
         holder.itemView.setOnClickListener { val intent = Intent(holder.itemView.context, DetalleComponenteActivity::class.java)
-            holder.itemView.context.startActivity(intent)
+            val posicion = holder.bindingAdapterPosition
+            if (posicion != RecyclerView.NO_POSITION){
+                intent.putExtra("posicion", posicion)
+                holder.itemView.context.startActivity(intent)
+            }
         }
 
 
