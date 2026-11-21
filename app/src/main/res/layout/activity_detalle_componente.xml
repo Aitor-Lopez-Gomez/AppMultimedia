@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F0FA"
+    tools:context=".DetalleComponenteActivity">
+
+    <TextView
+        android:id="@+id/txtCabeceraDetalle"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/fondo_cabecera"
+        android:gravity="center_vertical"
+        android:paddingStart="56dp"
+        android:text="Detalle del componente"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnVolver"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:background="@android:color/transparent"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtCabeceraDetalle"
+        app:layout_constraintStart_toStartOf="@+id/txtCabeceraDetalle"
+        app:layout_constraintTop_toTopOf="@+id/txtCabeceraDetalle"
+        app:srcCompat="@drawable/ic_flecha_volver" />
+
+    <ImageView
+        android:id="@+id/imgIconoDetalle"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtCabeceraDetalle"
+        app:layout_constraintEnd_toEndOf="@+id/txtCabeceraDetalle"
+        app:layout_constraintTop_toTopOf="@+id/txtCabeceraDetalle"
+        app:srcCompat="@drawable/ic_procesador" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/panelComponente"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/fondo_tarjeta"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCabeceraDetalle">
+
+        <ImageView
+            android:id="@+id/imgDetalleComponente"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="12dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/rtx5070" />
+
+        <TextView
+            android:id="@+id/txtDetalleNombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="12dp"
+            android:text="GeForce RTX 5070"
+            android:textColor="#493563"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgDetalleComponente"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtDetalleMarca"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="3dp"
+            android:text="ASUS"
+            android:textColor="#796A8C"
+            app:layout_constraintStart_toEndOf="@+id/imgDetalleComponente"
+            app:layout_constraintTop_toBottomOf="@+id/txtDetalleNombre" />
+
+        <RatingBar
+            android:id="@+id/rbDetalleValoracion"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:numStars="5"
+            android:progressTint="#E9B343"
+            android:rating="4"
+            android:stepSize="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imgDetalleComponente"
+            app:layout_constraintTop_toBottomOf="@+id/txtDetalleMarca" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="4,0"
+            android:textColor="#796A8C"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/rbDetalleValoracion"
+            app:layout_constraintStart_toEndOf="@+id/rbDetalleValoracion"
+            app:layout_constraintTop_toTopOf="@+id/rbDetalleValoracion" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/txtTituloInformacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Información"
+        android:textColor="#493563"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/panelComponente" />
+
+    <TextView
+        android:id="@+id/txtTituloDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Descripción"
+        android:textColor="#493563"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/panelInformacion"
+        app:layout_constraintTop_toBottomOf="@+id/panelInformacion" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/panelInformacion"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/fondo_tarjeta"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="@+id/panelComponente"
+        app:layout_constraintStart_toStartOf="@+id/panelComponente"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloInformacion">
+
+        <ImageView
+            android:id="@+id/imgCategoriaDetalle"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
+            android:tint="#7150A1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/outline_category_24" />
+
+        <View
+            android:id="@+id/separadorCategoria"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="#E6DDF2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDetalleCategoria" />
+
+        <View
+            android:id="@+id/separadorPrecio"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="#E6DDF2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDetallePrecio" />
+
+        <TextView
+            android:id="@+id/txtEtiquetaCategoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Categoría"
+            android:textColor="#796A8C"
+            app:layout_constraintBottom_toBottomOf="@+id/imgCategoriaDetalle"
+            app:layout_constraintStart_toEndOf="@+id/imgCategoriaDetalle"
+            app:layout_constraintTop_toTopOf="@+id/imgCategoriaDetalle" />
+
+        <TextView
+            android:id="@+id/txtEtiquetaCategoria2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Precio"
+            android:textColor="#796A8C"
+            app:layout_constraintBottom_toBottomOf="@+id/imgPrecioDetalle"
+            app:layout_constraintStart_toStartOf="@+id/txtEtiquetaCategoria"
+            app:layout_constraintTop_toTopOf="@+id/imgPrecioDetalle" />
+
+        <TextView
+            android:id="@+id/txtEtiquetaValoracion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valoración"
+            android:textColor="#796A8C"
+            app:layout_constraintBottom_toBottomOf="@+id/imgValoracionDetalle"
+            app:layout_constraintStart_toStartOf="@+id/txtEtiquetaCategoria2"
+            app:layout_constraintTop_toTopOf="@+id/imgValoracionDetalle" />
+
+        <TextView
+            android:id="@+id/txtDetalleCategoria"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="end"
+            android:text="Tarjeta gráfica"
+            android:textColor="#493563"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imgCategoriaDetalle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtEtiquetaCategoria"
+            app:layout_constraintTop_toTopOf="@+id/imgCategoriaDetalle" />
+
+        <TextView
+            android:id="@+id/txtDetallePrecio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="599,99 €"
+            android:textColor="#493563"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/txtEtiquetaCategoria2"
+            app:layout_constraintEnd_toEndOf="@+id/txtDetalleCategoria"
+            app:layout_constraintStart_toStartOf="@+id/txtDetalleCategoria"
+            app:layout_constraintTop_toTopOf="@+id/txtEtiquetaCategoria2" />
+
+        <TextView
+            android:id="@+id/txtDetallePrecio2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="4,0 / 5"
+            android:textColor="#493563"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/txtEtiquetaValoracion"
+            app:layout_constraintEnd_toEndOf="@+id/txtDetallePrecio"
+            app:layout_constraintStart_toStartOf="@+id/txtDetallePrecio"
+            app:layout_constraintTop_toTopOf="@+id/txtEtiquetaValoracion" />
+
+        <ImageView
+            android:id="@+id/imgPrecioDetalle"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="24dp"
+            android:tint="#7150A1"
+            app:layout_constraintEnd_toEndOf="@+id/imgCategoriaDetalle"
+            app:layout_constraintStart_toStartOf="@+id/imgCategoriaDetalle"
+            app:layout_constraintTop_toBottomOf="@+id/imgCategoriaDetalle"
+            app:srcCompat="@drawable/outline_attach_money_24" />
+
+        <ImageView
+            android:id="@+id/imgValoracionDetalle"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@+id/imgPrecioDetalle"
+            app:layout_constraintTop_toBottomOf="@+id/imgPrecioDetalle"
+            app:srcCompat="@drawable/ic_estrella" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/txtDetalleDescripcion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/fondo_tarjeta"
+        android:elevation="2dp"
+        android:gravity="start|top"
+        android:lineSpacingExtra="4dp"
+        android:minHeight="120dp"
+        android:padding="16dp"
+        android:text="Tarjeta gráfica de alto rendimiento, ideal para jugar en 1440p y 4K, compatible con DLSS y trazado de rayos."
+        android:textColor="#493563"
+        app:layout_constraintEnd_toEndOf="@+id/panelInformacion"
+        app:layout_constraintStart_toStartOf="@+id/panelInformacion"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloDescripcion" />
+
+    <Button
+        android:id="@+id/btnEditarComponente"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#E6DDF2"
+        android:text="Editar"
+        android:textAllCaps="false"
+        android:textColor="#493563"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnEliminarComponente"
+        app:layout_constraintStart_toStartOf="@+id/panelInformacion" />
+
+    <Button
+        android:id="@+id/btnEliminarComponente"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#FADDE2"
+        android:text="Eliminar"
+        android:textAllCaps="false"
+        android:textColor="#B32635"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/panelInformacion"
+        app:layout_constraintStart_toEndOf="@+id/btnEditarComponente" />
+
+    <ImageView
+        android:id="@+id/imgEditar"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnEditarComponente"
+        app:layout_constraintStart_toStartOf="@+id/btnEditarComponente"
+        app:layout_constraintTop_toTopOf="@+id/btnEditarComponente"
+        app:srcCompat="@drawable/ic_editar" />
+
+    <ImageView
+        android:id="@+id/imgEliminar"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="24dp"
+        android:tint="#B32635"
+        app:layout_constraintBottom_toBottomOf="@+id/btnEliminarComponente"
+        app:layout_constraintStart_toStartOf="@+id/btnEliminarComponente"
+        app:layout_constraintTop_toTopOf="@+id/btnEliminarComponente"
+        app:srcCompat="@drawable/ic_elimianr" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

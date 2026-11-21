@@ -1,4 +1,5 @@
 package com.example.calculadra.vista
+import android.content.Intent
 import android.view.View
 import android.view.ViewGroup
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.calculadra.R
 import com.example.calculadra.datos.RepositorioSingleton
 import android.net.Uri
+import com.example.calculadra.DetalleComponenteActivity
 
 
 class AdaptadorComponentes : RecyclerView.Adapter<AdaptadorComponentes.CreadorItems>(){
@@ -42,6 +44,9 @@ class AdaptadorComponentes : RecyclerView.Adapter<AdaptadorComponentes.CreadorIt
             holder.imagen.setImageResource(componente.imagen)
         }
         holder.valoracion.rating = componente.valoracion
+        holder.itemView.setOnClickListener { val intent = Intent(holder.itemView.context, DetalleComponenteActivity::class.java)
+            holder.itemView.context.startActivity(intent)
+        }
 
 
 
