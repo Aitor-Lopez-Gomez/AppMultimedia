@@ -51,6 +51,28 @@ class AnadirComponenteActivity : AppCompatActivity() {
         val btnGuardar = findViewById<Button>(R.id.btnGuardarComponente)
         val imgVistaPrevia = findViewById<ImageView>(R.id.imgVistaPrevia)
         val btnSeleccionarImagen = findViewById<Button>(R.id.btnSeleccionarImagen)
+        val posicion = intent.getIntExtra("posicion", -1)
+        var imagenRecurso = R.drawable.ic_procesador
+        val modoEdicion = posicion != -1
+        if (modoEdicion) {
+            val componente = RepositorioSingleton.instance.listaComponentes.buscar(posicion)
+            imagenRecurso = componente.imagen
+            edtNombre.setText(componente.nombre)
+            edtMarca.setText(componente.marca)
+            edtPrecio.setText(componente.precio.toString())
+            edtDescripcion.setText(componente.descripcion)
+            rbValoracion.rating = componente.valoracion
+            spnCategoria.setSelection(categorias.indexOf(componente.categoria))
+            if (componente.imagenUri != null) {
+                imagenSeleccionadaUri = Uri.parse(componente.imagenUri)
+                imgVistaPrevia.imageTintList = null
+                imgVistaPrevia.setImageURI(imagenSeleccionadaUri)
+            } else {
+                imgVistaPrevia.imageTintList = null
+                imgVistaPrevia.setImageResource(componente.imagen)
+            }
+
+        }
         btnGuardar.setOnClickListener {
             val nombre = edtNombre.text.toString().trim()
             val marca = edtMarca.text.toString().trim()
@@ -73,8 +95,13 @@ class AnadirComponenteActivity : AppCompatActivity() {
                 edtPrecio.error = "Introduce un precio válido"
                 return@setOnClickListener
             }
-            val componente = Componente(nombre, marca, categoria, precio, R.drawable.ic_procesador, descripcion, valoracion, imagenUri = imagenSeleccionadaUri?.toString())
-            RepositorioSingleton.instance.listaComponentes.nuevoComponente(componente)
+            val componente = Componente(nombre, marca, categoria, precio, imagenRecurso, descripcion, valoracion, imagenUri = imagenSeleccionadaUri?.toString())
+            if (modoEdicion){
+                RepositorioSingleton.instance.listaComponentes.actualizar(posicion, componente)
+            } else {
+                RepositorioSingleton.instance.listaComponentes.nuevoComponente(componente)
+            }
+
 
             finish()
         }

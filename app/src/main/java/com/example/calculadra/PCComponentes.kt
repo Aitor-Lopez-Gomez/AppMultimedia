@@ -73,6 +73,17 @@ class PCComponentes : AppCompatActivity() {
                     }
                     true
                 }
+                R.id.menuEditar -> {
+                    val position = adaptador.posicionSeleccionada
+                    if (position == RecyclerView.NO_POSITION){
+                        Toast.makeText(this,"Selecciona un componente", Toast.LENGTH_SHORT).show()
+                    } else {
+                        val intent = Intent(this, AnadirComponenteActivity::class.java)
+                        intent.putExtra("posicion", position)
+                        startActivity(intent)
+                    }
+                    true
+                }
                 else -> false
             }
         }
