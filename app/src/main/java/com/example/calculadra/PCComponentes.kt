@@ -1,6 +1,8 @@
 package com.example.calculadra
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +23,7 @@ class PCComponentes : AppCompatActivity() {
             insets
         }
         val btnVolver = findViewById<ImageButton>(R.id.btnVolver)
+        val btnAnadir = findViewById<Button>(R.id.btnAnadirComponente)
         val recycler = findViewById<RecyclerView>(R.id.rvComponentes)
 
         val adaptador = AdaptadorComponentes()
@@ -29,6 +32,10 @@ class PCComponentes : AppCompatActivity() {
         recycler.layoutManager = LinearLayoutManager(this)
         btnVolver.setOnClickListener {
             finish()
+        }
+        btnAnadir.setOnClickListener {
+            val intent = Intent(this, AnadirComponenteActivity::class.java)
+            startActivity(intent)
         }
     }
 

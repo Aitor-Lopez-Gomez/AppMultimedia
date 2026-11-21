@@ -44,7 +44,7 @@
         android:elevation="2dp"
         android:ems="10"
         android:hint="0,00"
-        android:inputType="text"
+        android:inputType="numberDecimal"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:textColor="#493563"
