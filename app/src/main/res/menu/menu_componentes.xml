@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuAnadir"
+        android:title="Añadir"
+        android:icon="@drawable/ic_anadir"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menuEditar"
+        android:title="Editar"
+        android:icon="@drawable/ic_editar"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menuEliminar"
+        android:title="Eliminar"
+        android:icon="@drawable/ic_eliminar"
+        app:showAsAction="always" />
+
+</menu>

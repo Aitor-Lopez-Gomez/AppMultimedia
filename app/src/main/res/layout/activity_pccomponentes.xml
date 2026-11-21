@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/imgIconoJuego"
@@ -27,56 +28,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtSubtituloComponentes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="4dp"
-        android:text="Gestiona tu inventario informatico"
-        android:textColor="#796A8C"
-        app:layout_constraintBottom_toTopOf="@+id/rvComponentes"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvComponentes"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnAnadirComponente"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSubtituloComponentes" />
-
-    <Button
-        android:id="@+id/btnAnadirComponente"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="#7150A1"
-        android:text="+ Añadir componente"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvComponentes" />
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtTituloComponentes"
-        app:layout_constraintEnd_toEndOf="@+id/txtTituloComponentes"
-        app:layout_constraintTop_toTopOf="@+id/txtTituloComponentes"
+        app:layout_constraintBottom_toBottomOf="@id/txtTituloComponentes"
+        app:layout_constraintEnd_toEndOf="@id/txtTituloComponentes"
+        app:layout_constraintTop_toTopOf="@id/txtTituloComponentes"
         app:srcCompat="@drawable/ic_procesador" />
 
     <ImageButton
@@ -85,9 +44,9 @@
         android:layout_height="48dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="Volver al menú"
-        app:layout_constraintBottom_toBottomOf="@+id/txtTituloComponentes"
-        app:layout_constraintStart_toStartOf="@+id/txtTituloComponentes"
-        app:layout_constraintTop_toTopOf="@+id/txtTituloComponentes"
+        app:layout_constraintBottom_toBottomOf="@id/txtTituloComponentes"
+        app:layout_constraintStart_toStartOf="@id/txtTituloComponentes"
+        app:layout_constraintTop_toTopOf="@id/txtTituloComponentes"
         app:srcCompat="@drawable/ic_flecha_volver" />
 
     <TextView
@@ -100,7 +59,48 @@
         android:textColor="#493563"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtSubtituloComponentes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTituloComponentes" />
+        app:layout_constraintTop_toBottomOf="@id/txtTituloComponentes" />
+
+    <TextView
+        android:id="@+id/txtSubtituloComponentes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        android:text="Gestiona tu inventario informático"
+        android:textColor="#796A8C"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView12" />
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarComponentes"
+        app:menu="@menu/menu_componentes"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/fondo_tarjeta"
+        android:elevation="2dp"
+        app:title="Herramientas"
+        app:titleTextColor="#493563"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSubtituloComponentes" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvComponentes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarComponentes" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

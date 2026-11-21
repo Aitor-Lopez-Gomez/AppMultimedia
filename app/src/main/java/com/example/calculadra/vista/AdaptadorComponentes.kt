@@ -16,6 +16,8 @@ import com.example.calculadra.DetalleComponenteActivity
 class AdaptadorComponentes : RecyclerView.Adapter<AdaptadorComponentes.CreadorItems>(){
 
     val lista = RepositorioSingleton.instance.listaComponentes
+    var posicionSeleccionada = RecyclerView.NO_POSITION
+    private set
 
     class CreadorItems(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -24,6 +26,8 @@ class AdaptadorComponentes : RecyclerView.Adapter<AdaptadorComponentes.CreadorIt
         val precio = itemView.findViewById<TextView>(R.id.txtPrecioComponente)
         val imagen = itemView.findViewById<ImageView>(R.id.imgComponente)
         val valoracion = itemView.findViewById<RatingBar>(R.id.rbValoracion)
+        val detalles = itemView.findViewById<ImageView>(R.id.imgDetalles)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CreadorItems {
@@ -44,16 +48,36 @@ class AdaptadorComponentes : RecyclerView.Adapter<AdaptadorComponentes.CreadorIt
             holder.imagen.setImageResource(componente.imagen)
         }
         holder.valoracion.rating = componente.valoracion
-        holder.itemView.setOnClickListener { val intent = Intent(holder.itemView.context, DetalleComponenteActivity::class.java)
+        holder.detalles.setOnClickListener {
+            val intent = Intent(holder.itemView.context, DetalleComponenteActivity::class.java)
             val posicion = holder.bindingAdapterPosition
-            if (posicion != RecyclerView.NO_POSITION){
+
+            if (posicion != RecyclerView.NO_POSITION) {
                 intent.putExtra("posicion", posicion)
                 holder.itemView.context.startActivity(intent)
             }
         }
+        holder.itemView.setOnClickListener {
+            val posicion = holder.bindingAdapterPosition
+
+            if (posicion != RecyclerView.NO_POSITION) {
+                posicionSeleccionada = posicion
+                notifyDataSetChanged()
+            }
+        }
+        if (position == posicionSeleccionada){
+            holder.itemView.setBackgroundResource(R.drawable.fondo_tarjeta_seleccionada)
+        } else {
+            holder.itemView.setBackgroundResource(R.drawable.fondo_tarjeta)
+        }
 
 
 
+    }
+
+    fun limpiarSeleccion() {
+        posicionSeleccionada = RecyclerView.NO_POSITION
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {
