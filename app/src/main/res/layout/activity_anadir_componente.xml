@@ -5,73 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F0FA"
+    android:elevation="2dp"
     tools:context=".AnadirComponenteActivity">
-
-    <TextView
-        android:id="@+id/txtCabeceraAnadir"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/fondo_cabecera"
-        android:gravity="start|center_vertical"
-        android:paddingStart="60dp"
-        android:text="Añadir componente"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/btnVolver"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@android:color/transparent"
-        android:padding="12dp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtCabeceraAnadir"
-        app:layout_constraintStart_toStartOf="@+id/txtCabeceraAnadir"
-        app:layout_constraintTop_toTopOf="@+id/txtCabeceraAnadir"
-        app:srcCompat="@drawable/ic_flecha_volver" />
-
-    <ImageView
-        android:id="@+id/imgIconoAñadir"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/txtCabeceraAnadir"
-        app:layout_constraintEnd_toEndOf="@+id/txtCabeceraAnadir"
-        app:layout_constraintTop_toTopOf="@+id/txtCabeceraAnadir"
-        app:srcCompat="@drawable/ic_procesador" />
-
-    <TextView
-        android:id="@+id/txtNuevoComponente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
-        android:text="Nuevo componente"
-        android:textColor="#493563"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCabeceraAnadir" />
-
-    <TextView
-        android:id="@+id/txtSubtituloAnadir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="4dp"
-        android:text="Introduce los datos del producto"
-        android:textColor="#796A8C"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNuevoComponente" />
 
     <ScrollView
         android:id="@+id/scrollFormulario"
@@ -81,8 +16,10 @@
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSubtituloAnadir">
+        app:layout_constraintTop_toBottomOf="@+id/txtSubtituloAnadir"
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -150,14 +87,30 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <Spinner
-                android:id="@+id/spnCategoria"
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:layout_marginTop="8dp"
-                android:background="@drawable/fondo_tarjeta"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp" />
+                android:background="@drawable/fondo_tarjeta">
+
+                <Spinner
+                    android:id="@+id/spnCategoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="48dp" />
+
+                <ImageView
+                    android:id="@+id/imgFlechaCategoria"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="16dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    app:srcCompat="@drawable/outline_arrow_drop_down_24" />
+            </FrameLayout>
 
             <TextView
                 android:id="@+id/textView8"
@@ -276,5 +229,70 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/txtCabeceraAnadir"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/fondo_cabecera"
+        android:gravity="start|center_vertical"
+        android:paddingStart="60dp"
+        android:text="Añadir componente"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnVolver"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtCabeceraAnadir"
+        app:layout_constraintStart_toStartOf="@+id/txtCabeceraAnadir"
+        app:layout_constraintTop_toTopOf="@+id/txtCabeceraAnadir"
+        app:srcCompat="@drawable/ic_flecha_volver" />
+
+    <ImageView
+        android:id="@+id/imgIconoAñadir"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/txtCabeceraAnadir"
+        app:layout_constraintEnd_toEndOf="@+id/txtCabeceraAnadir"
+        app:layout_constraintTop_toTopOf="@+id/txtCabeceraAnadir"
+        app:srcCompat="@drawable/ic_procesador" />
+
+    <TextView
+        android:id="@+id/txtNuevoComponente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:text="Nuevo componente"
+        android:textColor="#493563"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCabeceraAnadir" />
+
+    <TextView
+        android:id="@+id/txtSubtituloAnadir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="4dp"
+        android:text="Introduce los datos del producto"
+        android:textColor="#796A8C"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNuevoComponente" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

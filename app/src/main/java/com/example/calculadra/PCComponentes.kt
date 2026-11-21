@@ -13,7 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.calculadra.vista.AdaptadorComponentes
 
 class PCComponentes : AppCompatActivity() {
+    private lateinit var adaptador : AdaptadorComponentes
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_pccomponentes)
@@ -22,11 +24,12 @@ class PCComponentes : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         val btnVolver = findViewById<ImageButton>(R.id.btnVolver)
         val btnAnadir = findViewById<Button>(R.id.btnAnadirComponente)
         val recycler = findViewById<RecyclerView>(R.id.rvComponentes)
 
-        val adaptador = AdaptadorComponentes()
+        adaptador = AdaptadorComponentes()
 
         recycler.adapter = adaptador
         recycler.layoutManager = LinearLayoutManager(this)
@@ -37,6 +40,12 @@ class PCComponentes : AppCompatActivity() {
             val intent = Intent(this, AnadirComponenteActivity::class.java)
             startActivity(intent)
         }
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        adaptador.notifyDataSetChanged()
     }
 
 
