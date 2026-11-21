@@ -8,6 +8,7 @@ import android.widget.RatingBar
 import androidx.recyclerview.widget.RecyclerView
 import com.example.calculadra.R
 import com.example.calculadra.datos.RepositorioSingleton
+import android.net.Uri
 
 
 class AdaptadorComponentes : RecyclerView.Adapter<AdaptadorComponentes.CreadorItems>(){
@@ -35,8 +36,13 @@ class AdaptadorComponentes : RecyclerView.Adapter<AdaptadorComponentes.CreadorIt
         holder.nombre.text = componente.nombre
         holder.categoria.text = componente.categoria
         holder.precio.text = "${componente.precio} €"
-        holder.imagen.setImageResource(componente.imagen)
+        if (componente.imagenUri != null){
+            holder.imagen.setImageURI(Uri.parse(componente.imagenUri))
+        } else {
+            holder.imagen.setImageResource(componente.imagen)
+        }
         holder.valoracion.rating = componente.valoracion
+
 
 
     }

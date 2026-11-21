@@ -1,5 +1,6 @@
 package com.example.calculadra
 
+import android.net.Uri
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
@@ -11,10 +12,14 @@ import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.RatingBar
 import android.widget.Button
+import android.widget.ImageView
+import androidx.activity.result.contract.ActivityResultContracts
 import com.example.calculadra.modelo.Componente
 import com.example.calculadra.datos.RepositorioSingleton
+import android.content.Intent
 
 class AnadirComponenteActivity : AppCompatActivity() {
+    private var imagenSeleccionadaUri: Uri? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -44,6 +49,8 @@ class AnadirComponenteActivity : AppCompatActivity() {
         val edtDescripcion = findViewById<EditText>(R.id.edtDescripcion)
         val rbValoracion = findViewById<RatingBar>(R.id.rbValoracionNueva)
         val btnGuardar = findViewById<Button>(R.id.btnGuardarComponente)
+        val imgVistaPrevia = findViewById<ImageView>(R.id.imgVistaPrevia)
+        val btnSeleccionarImagen = findViewById<Button>(R.id.btnSeleccionarImagen)
         btnGuardar.setOnClickListener {
             val nombre = edtNombre.text.toString().trim()
             val marca = edtMarca.text.toString().trim()
@@ -51,6 +58,7 @@ class AnadirComponenteActivity : AppCompatActivity() {
             val precio = edtPrecio.text.toString().toDoubleOrNull()
             val descripcion = edtDescripcion.text.toString().trim()
             val valoracion = rbValoracion.rating
+
 
             if (nombre.isEmpty()){
                 edtNombre.error = "Introduce un nombre"
@@ -65,13 +73,23 @@ class AnadirComponenteActivity : AppCompatActivity() {
                 edtPrecio.error = "Introduce un precio válido"
                 return@setOnClickListener
             }
-            val componente = Componente(nombre, marca, categoria, precio, R.drawable.ic_procesador, descripcion, valoracion)
+            val componente = Componente(nombre, marca, categoria, precio, R.drawable.ic_procesador, descripcion, valoracion, imagenUri = imagenSeleccionadaUri?.toString())
             RepositorioSingleton.instance.listaComponentes.nuevoComponente(componente)
 
             finish()
         }
 
-
+        val selectorImagen = registerForActivityResult(ActivityResultContracts.OpenDocument()){
+                uri -> if (uri != null){
+            contentResolver.takePersistableUriPermission(uri,Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            imagenSeleccionadaUri = uri
+            imgVistaPrevia.imageTintList = null
+            imgVistaPrevia.setImageURI(uri)
+            }
+        }
+        btnSeleccionarImagen.setOnClickListener {
+            selectorImagen.launch(arrayOf("image/*"))
+        }
         val btnVolver = findViewById<ImageButton>(R.id.btnVolver)
         btnVolver.setOnClickListener {
             finish()
@@ -79,6 +97,7 @@ class AnadirComponenteActivity : AppCompatActivity() {
 
 
     }
+
 
 
 

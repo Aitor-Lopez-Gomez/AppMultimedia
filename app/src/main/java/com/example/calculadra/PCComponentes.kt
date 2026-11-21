@@ -11,9 +11,14 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.calculadra.vista.AdaptadorComponentes
+import android.net.Uri
+import android.widget.ImageView
+import androidx.activity.result.contract.ActivityResultContracts
+
 
 class PCComponentes : AppCompatActivity() {
     private lateinit var adaptador : AdaptadorComponentes
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -29,10 +34,14 @@ class PCComponentes : AppCompatActivity() {
         val btnAnadir = findViewById<Button>(R.id.btnAnadirComponente)
         val recycler = findViewById<RecyclerView>(R.id.rvComponentes)
 
+
         adaptador = AdaptadorComponentes()
 
         recycler.adapter = adaptador
         recycler.layoutManager = LinearLayoutManager(this)
+
+
+
         btnVolver.setOnClickListener {
             finish()
         }

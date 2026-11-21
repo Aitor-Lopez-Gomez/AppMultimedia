@@ -9,5 +9,6 @@ data class Componente(
     var precio: Double,
     var imagen: Int,
     var descripcion: String = "",
-    var valoracion: Float = 0f
+    var valoracion: Float = 0f,
+    var imagenUri: String? = null
 )

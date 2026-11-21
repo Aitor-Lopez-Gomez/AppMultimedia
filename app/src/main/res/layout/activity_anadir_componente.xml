@@ -196,7 +196,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/fondo_tarjeta"
-                android:padding="24dp"
+                android:padding="16dp"
                 android:scaleType="fitCenter"
                 android:tint="#7150A1"
                 app:srcCompat="@drawable/ic_procesador" />
